@@ -179,6 +179,8 @@ public class CatalogoLibros {
         return ranking;
     }
 
-
+    public Libro obtenerLibro(int posicion) {
+        return libros.get(posicion);
+    }
 
 }

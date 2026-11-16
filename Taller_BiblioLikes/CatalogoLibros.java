@@ -113,8 +113,71 @@ public class CatalogoLibros {
     }
 
 
+    public void editarLibro(int codigo, String titulo, String autor,
+                            String genero, int anio) {
+
+        int posicion = buscarIndicePorCodigo(codigo);
+
+        if (posicion == -1) {
+            throw new IllegalArgumentException("Libro no encontrado");
+        }
+
+        if (titulo == null || titulo.trim().isEmpty()) {
+            throw new IllegalArgumentException("Titulo obligatorio");
+        }
+
+        if (autor == null || autor.trim().isEmpty()) {
+            throw new IllegalArgumentException("Autor obligatorio");
+        }
+
+        if (genero == null || genero.trim().isEmpty()) {
+            throw new IllegalArgumentException("Genero obligatorio");
+        }
+
+        if (anio < 1 || anio > java.time.Year.now().getValue()) {
+            throw new IllegalArgumentException("Anio no valido");
+        }
+
+        Libro aux = libros.get(posicion);
+
+        aux.setTitulo(titulo);
+        aux.setAutor(autor);
+        aux.setGenero(genero);
+        aux.setAnio(anio);
+    }
 
 
+    public void darMeGusta(int codigo) {
+        int posicion = buscarIndicePorCodigo(codigo);
+
+        if (posicion == -1) {
+            throw new IllegalArgumentException("Libro no encontrado");
+        }
+
+        Libro aux = libros.get(posicion);
+        aux.incrementarMeGusta();
+    }
+
+
+    public ArrayList<Libro> obtenerRanking() {
+        ArrayList<Libro> ranking = new ArrayList<>(libros);
+        Libro aux;
+
+        for (int i = 0; i < ranking.size() - 1; i++) {
+            for (int j = 0; j < ranking.size() - 1 - i; j++) {
+
+                if (ranking.get(j).getMeGusta() <
+                        ranking.get(j + 1).getMeGusta()) {
+
+                    aux = ranking.get(j);
+                    ranking.set(j, ranking.get(j + 1));
+                    ranking.set(j + 1, aux);
+                }
+            }
+        }
+
+        return ranking;
+    }
 
 
 }

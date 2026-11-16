@@ -200,11 +200,11 @@ Los casos que indican «datos iniciales» deben ejecutarse en una sesión nueva 
 4. Entregar el enlace, el código integrado, capturas de las tres pestañas y evidencia de los casos de comprobación.
 5. Completar la tabla de aportes y preparar una demostración de búsqueda, edición, clics de me gusta y ranking.
 
-| Integrante | Usuario GitHub | Funcionalidad desarrollada | Enlace al commit |
-|---|---|---|---|
-| Por completar | Por completar | Por completar | Por completar |
-| Por completar | Por completar | Por completar | Por completar |
-| Por completar | Por completar | Por completar | Por completar |
+| Integrante     | Usuario GitHub | Funcionalidad desarrollada | Enlace al commit |
+|----------------|----------------|---|---|
+| Andres Morales | Andicok2k      | Por completar | Por completar |
+| Kevin Rosero   | kevin-rosero   | Por completar | Por completar |
+| Jose Serrano   | joseserranosj  | Por completar | Por completar |
 
 Verificar que GitHub asocie los commits a sus cuentas; si utilizan Git local, el correo configurado debe estar asociado a la cuenta correspondiente. El número de commits no sustituye la explicación del aporte.
 
@@ -213,5 +213,63 @@ Verificar que GitHub asocie los commits a sus cuentas; si utilizan Git local, el
 1. Funcionamiento **cualquier integrante ejecuta**, 3Puntos.
 2. Intefaz realizada manualmente por estudiantes **cualquier integrante ejecuta**, 3Puntos.
 3. Github **cualquier integrante explica**, 4Puntos.
+---
+
+---
+
+## Desarrollo del proyecto BiblioLikes
+
+### Descripción del proyecto
+
+BiblioLikes es un sistema desarrollado en Java para gestionar el catálogo de libros de una biblioteca universitaria. Permite registrar, buscar y editar libros, además de incrementar su cantidad de me gusta y consultar un ranking de popularidad.
+
+El proyecto utiliza estructuras de datos y algoritmos estudiados en Programación II, como ArrayList, búsqueda lineal, búsqueda binaria y ordenamiento burbuja.
+
+### Estructura del proyecto
+El sistema está organizado en las siguientes clases:
+
+- **Libro.java:** contiene los atributos y métodos de los libros.
+- **DatosIniciales.java:** permite cargar los 20 libros predefinidos.
+- **CatalogoLibros.java:** administra la colección de libros y contiene los métodos de registro, búsqueda, edición, me gusta y ordenamiento.
+- **Ventana.java:** contiene los eventos de los botones mediante ActionListener y los métodos que permiten interactuar con el catálogo.
+- **Ventana.form:** contiene el diseño gráfico realizado con Swing UI Designer de IntelliJ IDEA.
+
+### Funcionalidades del sistema
+
+El sistema contempla las siguientes funcionalidades:
+
+1. Registro de nuevos libros con validación de datos.
+2. Búsqueda lineal por título o autor.
+3. Búsqueda binaria mediante el código del libro.
+4. Edición de título, autor, género y año.
+5. Incremento del contador de me gusta.
+6. Ranking de popularidad mediante ordenamiento burbuja descendente.
+7. Visualización de los libros mediante una interfaz gráfica Java Swing.
+
+### Interfaz gráfica
+
+La interfaz gráfica se desarrolla mediante Java Swing utilizando un JTabbedPane con tres pestañas:
+
+- **Registro:** permite ingresar nuevos libros y visualizar la cantidad total de registros.
+- **Búsquedas y edición:** permite buscar libros por código, título o autor, modificar su información y aumentar sus me gusta.
+- **Ranking:** permite consultar los libros ordenados según su cantidad de me gusta.
+
+Los botones utilizan ActionListener para ejecutar métodos independientes y JOptionPane para mostrar mensajes de confirmación o errores de validación.
+
+### Tecnologías utilizadas
+
+- Java
+- IntelliJ IDEA
+- Java Swing
+- ArrayList
+- ActionListener
+- Git y GitHub
+
+### Ejecución del proyecto
+
+Una vez completada la integración, el sistema se ejecutará desde el método main() de la clase Ventana.java.
+
+Al iniciar, se cargarán 20 libros de demostración. Los cambios realizados se conservarán en memoria durante la ejecución del programa.
+
 
 

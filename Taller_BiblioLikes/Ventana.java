@@ -495,11 +495,16 @@ public class Ventana {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("BiblioLikes");
-        frame.setContentPane(new Ventana().Ventana);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                JFrame frame = new JFrame("BiblioLikes");
+                frame.setContentPane(new Ventana().Ventana);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
     }
 }
